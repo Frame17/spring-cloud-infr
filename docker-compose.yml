@@ -1,34 +1,7 @@
-version: '3'
-services:
-#########################################################################################
-##################################   INFRASTRUCTURE   ###################################
-  eureka:
-    build: ./eureka-server
-    ports:
-      - 8761:8761
-    environment:
-      - server.port=8761
-      - eureka.client.register-with-eureka=false
-      - eureka.client.fetch-registry=false
-  config:
-    image: hyness/spring-cloud-config-server
-    ports:
-      - 8888:8888
-    volumes:
-      - ./config:/config
-    environment:
-      - SPRING_PROFILES_ACTIVE=native
-      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=file://home/serhiy/Desktop/spring-cloud/config/config-repo
-  metrics:
-    image: prom/prometheus:latest
-    ports:
-      - 9090:9090
-    command:
-      - --config.file=/etc/prometheus/prometheus.yml
-    volumes:
-      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
 #########################################################################################
 ##################################   APPLICATION   ######################################
+version: '3'
+services:
   gateway:
     build:
       ./gateway
