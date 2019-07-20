@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: processor
+server:
+  port: 0
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/

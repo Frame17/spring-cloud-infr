@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id "org.springframework.boot" version "2.1.5.RELEASE"
+    id "io.spring.dependency-management" version "1.0.7.RELEASE"
+}
+
+group 'com.frame_17'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+    
+    implementation "javax.xml.bind:jaxb-api:2.2.11"
+    implementation "com.sun.xml.bind:jaxb-core:2.2.11"
+    implementation "com.sun.xml.bind:jaxb-impl:2.2.11"
+    implementation "javax.activation:activation:1.1.1"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
