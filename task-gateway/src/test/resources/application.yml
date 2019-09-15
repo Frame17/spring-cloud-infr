@@ -1,0 +1,5 @@
+com:
+  frame17:
+    rabbit:
+      queue-name: main-queue
+      exchange-name: main-exchange

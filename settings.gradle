@@ -3,4 +3,4 @@ rootProject.name = 'spring-cloud-infr'
 include 'eureka-server'
 include 'gateway'
 include 'processor'
-
+include 'task-gateway'
