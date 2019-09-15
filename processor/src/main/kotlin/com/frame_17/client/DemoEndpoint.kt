@@ -6,11 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class DemoEndpoint {
-
-    @Autowired
-    lateinit var registration: Registration
-
+class DemoEndpoint @Autowired constructor(
+        private val registration: Registration
+) {
     @GetMapping("demo")
     fun endpoint() = registration.instanceId
 }
