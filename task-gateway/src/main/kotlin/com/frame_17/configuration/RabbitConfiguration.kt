@@ -25,8 +25,13 @@ class RabbitConfiguration @Autowired constructor(
     }
 
     @Bean
-    fun queue(): Queue {
+    fun mainQueue(): Queue {
         return Queue(properties.queueName, true)
+    }
+
+    @Bean
+    fun secondaryQueue(): Queue {
+        return Queue("secondary", false)
     }
 
     @Bean

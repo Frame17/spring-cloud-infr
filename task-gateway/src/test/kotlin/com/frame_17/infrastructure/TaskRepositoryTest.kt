@@ -25,7 +25,9 @@ class TaskRepositoryTest {
     @Autowired
     lateinit var rabbitAdmin: RabbitAdmin
     @Autowired
-    lateinit var queue: Queue
+    lateinit var mainQueue: Queue
+    @Autowired
+    lateinit var queues: List<Queue>
 
     companion object {
         @get:ClassRule
@@ -37,7 +39,7 @@ class TaskRepositoryTest {
 
     @After
     fun tearDown() {
-        rabbitAdmin.purgeQueue(queue.name)
+        rabbitAdmin.purgeQueue(mainQueue.name)
     }
 
     @Test
