@@ -3,3 +3,4 @@ com:
     rabbit:
       queue-name: main-queue
       exchange-name: main-exchange
+      secondary: enable

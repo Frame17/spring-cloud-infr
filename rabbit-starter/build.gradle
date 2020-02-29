@@ -20,17 +20,7 @@ dependencyManagement {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-    implementation('org.springframework.cloud:spring-cloud-starter-config')
-
-    implementation('io.micrometer:micrometer-registry-prometheus')
-
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
-    testImplementation("org.testcontainers:testcontainers:1.12.1")
-
-    implementation project (':rabbit-starter')
+    implementation("org.springframework.boot:spring-boot-starter-amqp")
 }
 
 compileKotlin {
